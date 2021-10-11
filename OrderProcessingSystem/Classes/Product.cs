@@ -5,20 +5,20 @@ namespace OrderProcessingSystem.Classes
     public abstract class Product : IPayment
     {
         protected string ProductName { get; set; }
-        protected double Amount { get; set; }
+        protected double Price { get; set; }
         protected string OwnerName { get; set; }
 
-        protected Product(string productName, double amount, string ownerName)
+        protected Product(string productName, double price, string ownerName)
         {
 
             ProductName = productName;
-            Amount = amount;
+            Price = price;
             OwnerName = ownerName;
         }
         protected Product(string productName, double amount)
         {
             ProductName = productName;
-            Amount = amount;
+            Price = amount;
         }
         /// <summary>
         /// Payment Method To Complete Payment

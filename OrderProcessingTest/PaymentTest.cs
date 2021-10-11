@@ -22,13 +22,28 @@ namespace OrderProcessingTest
             ProductName = "Book";
             Amount =100.23;
             PackingSlip = new RoyaltyDepartment();
-            Payment = new Book(TransactionId,Amount,PackingSlip);
+            
         }
         [Test]
         public void Should_Complete_Payment()
         {
+            Payment = new Book(TransactionId, Amount, PackingSlip, 20);
             var isPaymentCompleted = Payment.DoPayment();
             Assert.True(isPaymentCompleted);
+        }
+        [Test]
+        public void Should_Not_Complete_Payment_If_AgentCommission_Is_Negative()
+        {
+            Payment = new Book(TransactionId, Amount, PackingSlip, -100);
+            var isPaymentCompleted = Payment.DoPayment();
+            Assert.False(isPaymentCompleted);
+        }
+        [Test]
+        public void Should_Not_Complete_Payment_If_AgentCommission_Is_Greater_Than_Product_Price()
+        {
+            Payment = new Book(TransactionId, Amount, PackingSlip, 5000);
+            var isPaymentCompleted = Payment.DoPayment();
+            Assert.False(isPaymentCompleted);
         }
     }
 }

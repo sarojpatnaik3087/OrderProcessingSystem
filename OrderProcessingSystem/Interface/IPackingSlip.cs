@@ -15,6 +15,6 @@ namespace OrderProcessingSystem.Interface
         /// <param name="amount"></param>
         /// <param name="contentList"></param>
         /// <returns>Bool</returns>
-        bool GenerateSlip(string transactionId, string productName, double amount, Dictionary<string, string> contentList);
+        bool GenerateSlip(string transactionId, string productName, double amount, Dictionary<string, string> contentList=default);
     }
 }

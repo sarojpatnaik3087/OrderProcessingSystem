@@ -16,7 +16,7 @@ namespace OrderProcessingSystem.Classes
         public override bool DoPayment()
         {
             Console.WriteLine("Payment Completed");
-            return _packagingSlip.GenerateSlip(Guid.NewGuid().ToString(), ProductName, Amount, new Dictionary<string, string>());
+            return _packagingSlip.GenerateSlip(Guid.NewGuid().ToString(), ProductName, Amount);
         }
     }
 }

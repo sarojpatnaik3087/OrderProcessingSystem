@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderProcessingSystem", "OrderProcessingSystem\OrderProcessingSystem.csproj", "{4C89031F-7664-458E-8BB2-5CECE630EF03}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderProcessingTest", "OrderProcessingTest\OrderProcessingTest.csproj", "{24B1DF22-2E5E-4E91-8ADB-3E95052EF696}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4C89031F-7664-458E-8BB2-5CECE630EF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C89031F-7664-458E-8BB2-5CECE630EF03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C89031F-7664-458E-8BB2-5CECE630EF03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24B1DF22-2E5E-4E91-8ADB-3E95052EF696}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24B1DF22-2E5E-4E91-8ADB-3E95052EF696}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24B1DF22-2E5E-4E91-8ADB-3E95052EF696}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24B1DF22-2E5E-4E91-8ADB-3E95052EF696}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

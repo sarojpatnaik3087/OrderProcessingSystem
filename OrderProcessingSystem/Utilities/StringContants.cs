@@ -6,6 +6,6 @@ namespace OrderProcessingSystem.Utilities
 {
     static class  StringConstants
     {
-        private static double AgentCommission = 30;
+        public static double AgentCommission = 30;
     }
 }

@@ -38,12 +38,5 @@ namespace OrderProcessingTest
             var isPaymentCompleted = Payment.DoPayment();
             Assert.False(isPaymentCompleted);
         }
-        [Test]
-        public void Should_Not_Complete_Payment_If_AgentCommission_Is_Greater_Than_Product_Price()
-        {
-            Payment = new Book(TransactionId, Amount, PackingSlip, 5000);
-            var isPaymentCompleted = Payment.DoPayment();
-            Assert.False(isPaymentCompleted);
-        }
     }
 }

@@ -22,7 +22,7 @@ namespace OrderProcessingSystem.Classes
             {
                 ValidateAgentCommission(_agentCommission);
                 Console.WriteLine("Payment Completed");
-                Price = (Price - _agentCommission);
+                Console.WriteLine("Agent Commission Payment Done:"+ Price * (_agentCommission/100));
                 return _packagingSlip.GenerateSlip(Guid.NewGuid().ToString(), ProductName, Price);
             }
             catch (Exception e)
@@ -40,10 +40,6 @@ namespace OrderProcessingSystem.Classes
             if (agentPrice < 0)
             {
                 throw new Exception("Agent Commission cannot be negative number");
-            }
-            else if(agentPrice>Price)
-            {
-                throw new Exception("Agent Commission Cannot be Greater than Price of Product");
             }
         }
     }

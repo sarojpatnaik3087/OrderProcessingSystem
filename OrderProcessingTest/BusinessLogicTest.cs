@@ -1,78 +1,50 @@
 using NUnit.Framework;
+using OrderProcessingSystem.BusinessLayer;
 
 namespace OrderProcessingTest
 {
+    /// <summary>
+    /// This is end-end testing of application
+    /// </summary>
     public class Tests
     {
+        private ProductFacade ProductFacade { get; set; }
         [SetUp]
         public void Setup()
         {
+            
         }
 
         [Test]
         public void Should_Complete_Payment_And_Print_PackingSlip_For_PhysicalProduct()
         {
-            Assert.Pass();
+            ProductFacade = new ProductFacade("TV", 2000, "validemailid@gmail.com");
+            Assert.True(ProductFacade.PhysicalProductPayment());
         }
         [Test]
         public void Should_Complete_Payment_And_Print_Duplicate_PackingSlip_For_Book()
         {
-            Assert.Pass();
+            ProductFacade = new ProductFacade("OnceInaWhile", 2000, "validemailid@gmail.com");
+            Assert.True(ProductFacade.BookPayment());
         }
-        [Test]
-        public void Should_Give_Commission_To_Agent_For_Book()
-        {
-            Assert.Pass();
-        }
-        [Test]
-        public void Should_Give_Error_If_Commission_Value_Is_Negative_For_Book()
-        {
-            Assert.Pass();
-        }
-        [Test]
-        public void Should_Give_Error_If_Commission_Value_Is_Negative_For_PhysicalProduct()
-        {
-            Assert.Pass();
-        }
-        [Test]
-        public void Should_Give_Commission_To_Agent_For_PhysicalProduct()
-        {
-            Assert.Pass();
-        }
+        
         [Test]
         public void Should_Complete_Payment_And_Activate_Membership()
         {
-            Assert.Pass();
+            ProductFacade = new ProductFacade("PrimeMemberShip", 2000, "validemailid@gmail.com");
+            Assert.True(ProductFacade.MembershipPayment());
         }
         [Test]
         public void Should_Complete_Payment_And_Update_Membership()
         {
-            Assert.Pass();
+            ProductFacade = new ProductFacade("PrimeMemberShip", 2000, "validemailid@gmail.com");
+            Assert.True(ProductFacade.UpgradeMembershipPayment());
         }
-        [Test]
-        public void Should_Complete_Payment_And_Send_Email_For_New_Membership()
+        //TODO
+        //Not completed due to time constraint
+        public void Should_Complete_Payment_For_Video()
         {
-            Assert.Pass();
-        }
-        [Test]
-        public void Should_Complete_Payment_And_Send_Email_For_Update_Membership()
-        {
-            Assert.Pass();
-        }
-        [Test]
-        public void Should_Send_Error_Message_If_No_EmailId_Present_For_Membership()
-        {
-            Assert.Pass();
-        }
-        [Test]
-        public void Should_Add_New_Video_Content_In_PackingSlip_For_Specific_Video_Type()
-        {
-            Assert.Pass();
-        }
-        [Test]
-        public void Should_Not_Add_New_Video_Content_In_PackingSlip_If_Video_Type_Not_Matches()
-        {
-            Assert.Pass();
+            
         }
     }
 }

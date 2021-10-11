@@ -11,7 +11,7 @@ namespace OrderProcessingSystem.BusinessLayer
         private readonly string _productName;
         private readonly double _price;
         private readonly string _ownerEmailId;
-        public ProductFacade(string productName, double price, string ownerEmailId, string shippingAddress)
+        public ProductFacade(string productName, double price, string ownerEmailId)
         {
             _productName = productName;
             _price = price;
@@ -20,30 +20,30 @@ namespace OrderProcessingSystem.BusinessLayer
         /// <summary>
         /// PhysicalProduct Product Payment
         /// </summary>
-        public void PhysicalProductPayment()
+        public bool PhysicalProductPayment()
         {
             Product product =
                 new PhysicalProduct(_productName, _price, new Shipping(), StringConstants.AgentCommission);
-            product.DoPayment();
+            return product.DoPayment();
         }
-        public void BookPayment()
+        public bool BookPayment()
         {
             Product product =
                 new Book(_productName, _price, new RoyaltyDepartment(), StringConstants.AgentCommission);
-            product.DoPayment();
+            return product.DoPayment();
         }
 
-        public void MembershipPayment()
+        public bool MembershipPayment()
         {
             Product product =
-                new MemberShip(_productName, _price, "validemail@gmail.com");
-            product.DoPayment();
+                new MemberShip(_productName, _price, _ownerEmailId);
+           return product.DoPayment();
         }
-        public void UpgradeMembershipPayment()
+        public bool UpgradeMembershipPayment()
         {
             Product product =
-                new UpgradeMemberShip(_productName, _price, "validemail@gmail.com");
-            product.DoPayment();
+                new UpgradeMemberShip(_productName, _price, _ownerEmailId);
+            return product.DoPayment();
         }
     }
 }

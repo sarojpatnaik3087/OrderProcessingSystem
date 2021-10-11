@@ -20,10 +20,29 @@ namespace OrderProcessingSystem.BusinessLayer
         /// <summary>
         /// PhysicalProduct Product Payment
         /// </summary>
-        public void PayPhysicalProduct()
+        public void PhysicalProductPayment()
         {
             Product product =
                 new PhysicalProduct(_productName, _price, new Shipping(), StringConstants.AgentCommission);
+            product.DoPayment();
+        }
+        public void BookPayment()
+        {
+            Product product =
+                new Book(_productName, _price, new RoyaltyDepartment(), StringConstants.AgentCommission);
+            product.DoPayment();
+        }
+
+        public void MembershipPayment()
+        {
+            Product product =
+                new MemberShip(_productName, _price, "validemail@gmail.com");
+            product.DoPayment();
+        }
+        public void UpgradeMembershipPayment()
+        {
+            Product product =
+                new UpgradeMemberShip(_productName, _price, "validemail@gmail.com");
             product.DoPayment();
         }
     }

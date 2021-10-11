@@ -6,14 +6,14 @@ namespace OrderProcessingSystem.Classes
     {
         protected string ProductName { get; set; }
         protected double Price { get; set; }
-        protected string OwnerName { get; set; }
+        protected string OwnerEmailId { get; set; }
 
-        protected Product(string productName, double price, string ownerName)
+        protected Product(string productName, double price, string ownerEmailId)
         {
 
             ProductName = productName;
             Price = price;
-            OwnerName = ownerName;
+            OwnerEmailId = ownerEmailId;
         }
         protected Product(string productName, double amount)
         {
